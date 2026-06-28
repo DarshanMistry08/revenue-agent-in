@@ -1,16 +1,48 @@
-# React + Vite
+# 🚀 RevenueAgent IN: Autonomous Risk Ingestion & Action Ledger Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **Kaggle Vibe Coding Capstone — Agents for Business Track**
 
-Currently, two official plugins are available:
+`RevenueAgent IN` is an enterprise-grade, autonomous financial risk management and collections orchestration system. It uses a simulated **Google ADK 2.0 Graph Architecture** to ingest Indian corporate client portfolios, evaluate pipeline and financial risks in real-time, trigger multi-channel communication sequences, and record every action in a live financial ledger.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Built for modern finance and sales operations teams managing high-value Indian corporate accounts (₹ INR).
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🏗️ ADK 2.0 Agentic Workflow (DAG)
 
-## Expanding the Oxlint configuration
+The following Mermaid.js diagram maps the complete autonomous decision-making and execution flow:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```mermaid
+graph TD
+    A[📥 Portfolio Data Ingestion] --> B[⚙️ ADK 2.0 Workflow Init]
+    B --> C[🧠 AccountEvaluator Node]
+
+    C -->|Evaluate Contact Recency & Deal Tier| D{Pipeline Risk?}
+    C -->|Evaluate Payment Status| E{Financial Risk?}
+
+    D -->|YES — Standard > 14 days / Premium > 5 days| F[⚠️ PipelineAlerter Node]
+    D -->|NO — Contact Healthy| G[✅ Check Passed]
+
+    E -->|YES — Status is Overdue| H[🚨 FinancialAlerter Node]
+    E -->|NO — Status is Paid/Pending| I[✅ Check Passed]
+
+    F --> J[📋 Action: CRM Follow-up Task Raised]
+    H --> K[📱 Twilio SMS API — Payment Link Dispatched]
+    H --> L[💬 WhatsApp Business API — Transaction Reminder]
+    H --> M[📞 IVR Outbound Voice Call Sequence Triggered]
+
+    J --> N[📝 ReportingAgent Node]
+    K --> N
+    L --> N
+    M --> N
+    G --> N
+    I --> N
+
+    N --> O[💻 UI Update: Correspondence Hub + Transaction Ledger]
+    O --> P([🏁 Workflow Complete])
+
+    style A fill:#1f2937,stroke:#3b82f6,color:#fff
+    style C fill:#1f2937,stroke:#a855f7,color:#fff
+    style F fill:#f59e0b,stroke:#f59e0b,color:#000
+    style H fill:#ef4444,stroke:#ef4444,color:#fff
+    style N fill:#10b981,stroke:#10b981,color:#fff
